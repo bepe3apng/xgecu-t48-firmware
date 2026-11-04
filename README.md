@@ -1,17 +1,17 @@
-# XGecu T48 firmware V9
+# Прошивка V9 для XGecu T48
 
-Experimental firmware patch.
+Экспериментальный патч прошивки.
 
-## Ready-to-use files
+## Готовые файлы
 
-- `reverse/software_crypto/dist/T48_V9_Flasher.exe`: install V9 or restore stock.
-- `reverse/software_crypto/dist/README_RU.txt`: Russian instructions.
-- `reverse/software_crypto/output/`: DAT, decoded BIN and verification report.
-- `reverse/software_crypto/T48_V9_article.md` and `.txt`: Russian research article.
+- `reverse/software_crypto/dist/T48_V9_Flasher.exe` — прошивальщик для установки V9 или возврата оригинальной прошивки.
+- `reverse/software_crypto/dist/README_RU.txt` — инструкция по использованию.
+- `reverse/software_crypto/output/` — контейнер DAT, декодированный образ BIN и отчёт о проверках.
+- `reverse/software_crypto/T48_V9_article.md` и `.txt` — статья об исследовании и создании патча.
 
-## Build
+## Сборка
 
-Windows, Python 3.11, PyInstaller and Capstone are required. From this directory:
+Потребуются Windows, Python 3.11, PyInstaller и Capstone. Выполните команды из корня этого комплекта:
 
 ```powershell
 python -m pip install pyinstaller capstone
@@ -19,14 +19,18 @@ python -X utf8 reverse/software_crypto/build_v9.py
 python -X utf8 reverse/software_crypto/build_flasher.py
 ```
 
-The package preserves the original directory layout and includes the existing packaged installation worker. Building does not install firmware on the device.
+В комплекте сохранена исходная структура каталогов и включён подготовленный модуль установки. Команды сборки создают файлы и не устанавливают прошивку на устройство.
 
-## Scope
+## Возможности и ограничения
 
-Synthetic E0 identity/status/flags for 15 selectors. TSOP56 still requires its real crypto chip. Pin Detect overrides internal indices 40/41/43 at two call sites. This is not complete ATSHA emulation.
+Для 15 известных селекторов программно формируются ID адаптера, статус и флаги допуска в ответ на E0. Для этих проверок крипточип или EEPROM не требуются. Для TSOP56 сохранена проверка настоящего крипточипа.
 
-## Distribution and licensing
+В двух местах вызова Pin Detect подменяется результат проверки внутренних индексов 40, 41 и 43. Остальные контакты проверяются штатно. После проверки выполняется исходный код управления выводами. Эти индексы не следует считать подтверждёнными номерами физических контактов разъёма.
 
-This is a local collection, not a published release. Xgpro, its DLLs, stock firmware and firmware-derived images remain third-party materials. The bundled EXE and payload also contain those materials. A license for original project code does not grant distribution rights to them. Review redistribution permissions before publishing this entire folder. No new license has been assigned by this packaging step.
+Патч не является полной эмуляцией ATSHA и не добавляет новые алгоритмы программирования памяти. Аппаратная работоспособность V9 для всех адаптеров пока не подтверждена.
 
-Adapter dumps and extracted authentication secrets are excluded. `emmc_continue/t48_key.dat` is the existing firmware-container codec dependency, not an extracted adapter read-key dump.
+Поддержать разработку -
+
+💳Тбанк - https://www.tbank.ru/cf/5xFGZshymTA
+
+💳Сбер - https://messenger.online.sberbank.ru/sl/b64OEIJdaiBKMQ5W3
