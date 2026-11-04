@@ -1,0 +1,82 @@
+{
+  "status": "OFFLINE_PASS_NOT_INSTALLED",
+  "checks": 928,
+  "sha256": "e31497085d4aff09d6a0a6407a32cc84c6f2ab401f031a55cf2649c3c64e1bf5",
+  "file": "UpdateT48_SOFTWARE_CRYPTO_PINDETECT_V9_UNTESTED.dat",
+  "base": "stock OR/UpdateT48.dat",
+  "ids": {
+    "0x1": "0xada00002",
+    "0x2": "0xada00004",
+    "0x3": "0xada00002",
+    "0x8": "0xada00001",
+    "0x4000": "0xada00008",
+    "0xe1000000": "0xada00002",
+    "0xe2000000": "0xada00003",
+    "0xe3000000": "0xada00013",
+    "0xe4000000": "0xada00014",
+    "0xe5000000": "0xada00009",
+    "0xe6000000": "0xada0000a",
+    "0xe7000000": "0xada0000c",
+    "0xe8000000": "0xada0000b",
+    "0xea000000": "0xada00015",
+    "0xec000000": "0xada00008"
+  },
+  "pin_indices": [
+    40,
+    41,
+    43
+  ],
+  "pin_hooks": [
+    "0x2e880",
+    "0x2e936"
+  ],
+  "allowed_changes": [
+    [
+      "0x3ee34",
+      "0x3ef7c"
+    ],
+    [
+      "0x3edc0",
+      "0x3ede4"
+    ],
+    [
+      "0x3ee00",
+      "0x3ee34"
+    ],
+    [
+      "0x2aba2",
+      "0x2aba6"
+    ],
+    [
+      "0x2abb4",
+      "0x2abb8"
+    ],
+    [
+      "0x2e880",
+      "0x2e884"
+    ],
+    [
+      "0x2e936",
+      "0x2e93a"
+    ]
+  ],
+  "tsop56": "Original E0, deferred mode0 setup, real crypto required",
+  "emulation": "E0 identity/status/flags only; no ATSHA command-level emulation; no EEPROM needed",
+  "gpio": "Scan-local return override only; no persistent state or GPIO writes in stub; stock cleanup/drivers retained",
+  "limitations": [
+    "Not hardware tested",
+    "Pin indices are internal, not verified connector numbers",
+    "Pin overrides apply to both scanned paths independent of family",
+    "Physical faults/loading cannot be repaired by firmware",
+    "Direct crypto USB commands remain stock",
+    "Only known 15 selectors plus real TSOP56 path supported"
+  ],
+  "container": {
+    "version": "0xf0480127",
+    "blocks": 942,
+    "base": "0x8005000",
+    "end": "0x803fe00",
+    "all_block_crcs_valid": true,
+    "source_sha256": "e31497085d4aff09d6a0a6407a32cc84c6f2ab401f031a55cf2649c3c64e1bf5"
+  }
+}

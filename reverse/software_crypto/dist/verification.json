@@ -1,0 +1,9 @@
+{
+  "exe": "T48_V9_Flasher.exe",
+  "sha256": "955cdf9b2a3eb5d69c8a388c58e01f5a939d6c28103b073beeeddc88e4281fb5",
+  "bytes": 11905410,
+  "verification": "PASS: source and bundled EXE self-test, help startup, worker integrity/readiness 1.31",
+  "firmware_sha256": "e31497085d4aff09d6a0a6407a32cc84c6f2ab401f031a55cf2649c3c64e1bf5",
+  "hardware": "NOT RUN; no installation performed",
+  "payload_files": 25
+}
