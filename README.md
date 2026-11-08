@@ -36,3 +36,5 @@ python -X utf8 reverse/software_crypto/build_flasher.py
 💳Тбанк - https://www.tbank.ru/cf/5xFGZshymTA
 
 💳Сбер - https://messenger.online.sberbank.ru/sl/b64OEIJdaiBKMQ5W3
+
+💳С любой карты - https://yoomoney.ru/to/4100119680282184
